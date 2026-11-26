@@ -1,0 +1,23 @@
+[Unit]
+Description=FCaptcha verification server
+After=network.target
+
+[Service]
+Type=simple
+User=__APP__
+Group=__APP__
+WorkingDirectory=__INSTALL_DIR__
+ExecStart=__INSTALL_DIR__/fcaptcha-server
+Environment=PORT=__PORT__
+Environment=TRUSTED_PROXIES=127.0.0.1/32
+EnvironmentFile=__DATA_DIR__/fcaptcha.env
+Restart=on-failure
+NoNewPrivileges=yes
+PrivateDevices=yes
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=strict
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=multi-user.target

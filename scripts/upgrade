@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+ynh_script_progression "Updating FCaptcha..."
+ynh_systemctl --service="$app" --action=stop
+build_fcaptcha
+configure_fcaptcha

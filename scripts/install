@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+ynh_script_progression "Building FCaptcha..."
+build_fcaptcha
+
+ynh_script_progression "Configuring the FCaptcha service..."
+configure_fcaptcha

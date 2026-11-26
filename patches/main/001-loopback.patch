@@ -1,0 +1,10 @@
+--- a/server-go/main.go
++++ b/server-go/main.go
+@@ -364,5 +364,2 @@
+-	// Server
+-	bindHost := ""
+-	if secretKey == insecureDefaultSecret {
+-		bindHost = "127.0.0.1"
+-	}
++	// YunoHost's nginx is the public entry point.
++	bindHost := "127.0.0.1"
